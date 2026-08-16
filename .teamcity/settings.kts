@@ -55,6 +55,10 @@ object Build : BuildType({
         maven {
             name = "maven test"
             id = "maven_test"
+
+            conditions {
+                doesNotContain("teamcity.build.branch", "master")
+            }
             goals = "clean test"
         }
     }
