@@ -52,6 +52,11 @@ object Build : BuildType({
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             userSettingsSelection = "settings.xml"
         }
+        maven {
+            name = "maven test"
+            id = "maven_test"
+            goals = "clean test"
+        }
     }
 
     triggers {
